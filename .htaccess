@@ -1,0 +1,15 @@
+# Friendly URLs for projet-web1-main
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /projet-web1-main/
+
+    # Friendly apply URL: /formation/applytotheformation or /formation/applytotheformation/123
+    RewriteRule ^formation/applytotheformation(?:/([0-9]+))?$ Views/formation/apply.php?formation_id=$1 [L,QSA]
+
+    # Friendly details URL: /formation/details/123
+    RewriteRule ^formation/details/([0-9]+)$ Views/formation/details.php?id=$1 [L,QSA]
+
+    # Friendly list URL: /formation/list
+    RewriteRule ^formation/list$ Views/formation/list.php [L,QSA]
+
+</IfModule>
